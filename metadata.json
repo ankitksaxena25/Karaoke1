@@ -1,0 +1,5 @@
+{
+  "name": "Karaoke Lyric Generator",
+  "description": "An AI-powered karaoke application that takes song lyrics and generates perfectly timed, sing-along ready text using the Gemini API. The app features a sleek player to display the synchronized lyrics.",
+  "requestFramePermissions": []
+}
