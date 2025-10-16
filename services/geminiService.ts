@@ -8,11 +8,11 @@ export const generateKaraokeLyrics = async (
   duration: number,
   language: string
 ): Promise<KaraokeData> => {
-    // API Key is read from environment variables
-    if (!process.env.API_KEY) {
-        throw new Error("API_KEY environment variable not set.");
+    const apiKey = import.meta.env.VITE_GOOGLE_API_KEY;
+    if (!apiKey) {
+        throw new Error("VITE_GOOGLE_API_KEY environment variable not set.");
     }
-    const ai = new GoogleGenAI({apiKey: process.env.API_KEY});
+    const ai = new GoogleGenAI({apiKey});
 
   const prompt = `
     You are an AI system powering a karaoke app. Your task is to process the given lyrics and song duration to create perfectly timed karaoke-style lyric data.
